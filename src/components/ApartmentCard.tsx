@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Star, Wifi, UtensilsCrossed, Wind, Car } from "lucide-react";
+import { Star, Wifi, UtensilsCrossed, Wind, Car, Phone } from "lucide-react";
 import type { Apartment } from "@/data/apartments";
 
 const amenityIcons: Record<string, React.ReactNode> = {
@@ -50,9 +50,18 @@ const ApartmentCard = ({ apartment }: { apartment: Apartment }) => (
         <p className="text-base font-semibold text-foreground">
           €{apartment.price} <span className="text-sm font-normal text-muted-foreground">/ night</span>
         </p>
+        {/** 
         <span className="rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-colors group-hover:bg-primary/90">
           Book Now
         </span>
+        */}
+        <a 
+          href={`tel:+${apartment.mob}`} 
+          aria-label="Call us"
+          onClick={(e) => e.stopPropagation()}
+          className="flex justify-center text-center rounded-full bg-green-500 w-10 h-10 z-50">
+          <Phone size={16} className="mt-3 text-white" />
+        </a>
       </div>
     </div>
   </Link>
