@@ -23,7 +23,7 @@ const Apartments = () => {
         <p className="mt-2 text-muted-foreground font-body">
           {filtered.length} apartment{filtered.length !== 1 ? "s" : ""} available
         </p>
-
+        {/** 
         <div className="mt-6 flex flex-wrap gap-2">
           {cities.map((c) => {
             const active = (c === "All" && !cityFilter) || c === cityFilter;
@@ -45,7 +45,7 @@ const Apartments = () => {
             );
           })}
         </div>
-
+        */}
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((apt) => (
             <ApartmentCard key={apt.id} apartment={apt} />
